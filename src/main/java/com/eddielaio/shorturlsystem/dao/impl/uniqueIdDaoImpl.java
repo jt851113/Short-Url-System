@@ -32,8 +32,8 @@ public class uniqueIdDaoImpl implements uniqueIdDao {
             String sql = "Insert Into url_db(original_url) Values(:original_url)";
             namedParameterJdbcTemplate.update(sql, new MapSqlParameterSource(map), keyHolder);
             int key = keyHolder.getKey().intValue();
-            String s = transformUtil.base62(key);
-            s = String.format("%0" + (6 - s.length()) + "d%s", 0, s);
+            //String s = transformUtil.base62(key);
+            String s = transformUtil.randomBase62();
             map.put("short_url", s);
             map.put("id", key);
             String sql2 = "UPDATE url_db set short_url=:short_url where id = :id";

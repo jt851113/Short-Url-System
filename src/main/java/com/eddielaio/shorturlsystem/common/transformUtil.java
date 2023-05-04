@@ -9,7 +9,7 @@ public class transformUtil {
 
     private static final HashMap<Integer, Character> IndexToChar = new HashMap<>();
     private static final HashMap<Character, Integer> CharToIndex = new HashMap<>();
-    public transformUtil() {
+    private transformUtil() {
         initTable();
     }
 
@@ -45,6 +45,10 @@ public class transformUtil {
         while (!result.isEmpty()) {
             s.append(IndexToChar.get(result.pop()));
         }
+        while (s.length() < 6){
+            //padding with IndexToChar[0]
+            s.insert(0, IndexToChar.get(0));
+        }
         return s.toString();
     }
 
@@ -58,11 +62,22 @@ public class transformUtil {
         return decVal;
     }
 
-    private HashMap<Integer, Character> getIndexToChar() {
+    public static String randomBase62() {
+        //generate a random 6 code number for shorten url
+        StringBuilder s = new StringBuilder();
+        Random r = new Random();
+        while (s.length() < 6) {
+            int i = r.nextInt(62);
+            s.append(IndexToChar.get(i));
+        }
+        return s.toString();
+    }
+
+    private static HashMap<Integer, Character> getIndexToChar() {
         return IndexToChar;
     }
 
-    private HashMap<Character, Integer> getCharToIndex() {
+    private static HashMap<Character, Integer> getCharToIndex() {
         return CharToIndex;
     }
 
