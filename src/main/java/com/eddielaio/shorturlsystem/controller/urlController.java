@@ -39,7 +39,7 @@ public class urlController {
 
     @Operation(summary = "redirect to the original url")
     @ApiResponse(description = "redirect to the original url if short url is exist")
-    @GetMapping("/api/v1/{shortUrl}")
+    @GetMapping("/{shortUrl}")
     public ResponseEntity<String> redirectToOriginalUrl(@PathVariable String shortUrl) throws URISyntaxException {
         String decode = urlService.decode(shortUrl);
         System.out.println(decode);
