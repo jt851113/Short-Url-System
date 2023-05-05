@@ -31,8 +31,8 @@ public class urlController {
                     summary = "Request Example",
                     value = "{\"url\":\"https://www.google.com\"}"
             )})
-    ) @NotNull url OriginlUrl) {
-        String encode = urlService.encode(OriginlUrl.getUrl());
+    ) @NotNull url OriginalUrl) {
+        String encode = urlService.encode(OriginalUrl.getUrl());
         url short_url = new url(encode);
         return ResponseEntity.status(HttpStatus.CREATED).body(short_url);
     }
