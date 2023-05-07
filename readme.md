@@ -18,7 +18,10 @@ The Short URL System is designed to create shortened versions of long URLs, maki
 ### Whole System Design
 ![System](https://raw.githubusercontent.com/jt851113/my-image-host/main/202305072121285.png)
 ### Unique Id Implement
-   
+The system generates a random six-character code using a base-62 encoding scheme. <br>
+This encoding scheme consists of alphanumeric characters, including uppercase letters (A-Z), lowercase letters (a-z), and digits (0-9). The total number of possible combinations for the six-character code is 62^6, resulting in a vast number of unique codes.<br>
+This approach allows for a large number of short URLs to be generated and ensures uniqueness and randomness in the generated codes.<br>
+There are many encoding algorithms that would be a good choice too, such as Snowflake or UUID. However, considering time and resources, this method is good enough to handle our requirements.
 ***
 ## Install
 To install and run the ShortUrl System, follow these steps:
@@ -63,6 +66,7 @@ Once the ShortUrl System is running, follow these steps to create shortened URLs
 3. The shortened URL will be generated and displayed on the page. 
 4. Copy the shortened URL and use it as desired.
 
+If you are looking for an API, I have used the OPENAPI notation in this project. You can check it out at http://localhost/api
 ## Configure The SSL certificate:
 By default, the Short-Url-System runs on HTTP. If you want to enable SSL for secure communication, follow these steps:
 
