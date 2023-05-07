@@ -4,6 +4,9 @@
 *** 
 
 ![image.png](https://raw.githubusercontent.com/jt851113/my-image-host/main/202305070012141.png)
+***
+
+## <center>[Live Demo](<https://eddieshort.site/>)</center>
 
 *** 
 ## Background
@@ -80,13 +83,14 @@ server.ssl.key-store=/path/to/your/keystore.p12
 server.ssl.key-store-password=your-keystore-password
 server.ssl.key-store-type=PKCS12
 ```
-Replace /path/to/your/keystore.p12 with the actual path to your SSL keystore file, and your-keystore-password with the password for your keystore.
-3. Restart the application:
-   Stop the running Short-Url-System application and start it again.
-4. Access the application over HTTPS:
-   Open a web browser and go to https://localhost:8443 to access the Short-Url-System using SSL.
+Replace /path/to/your/keystore.p12 with the actual path to your SSL keystore file, and your-keystore-password with the password for your keystore.<br>
+3. Restart the application:<br>
+   Stop the running Short-Url-System application and start it again.<br>
+4. Access the application over HTTPS:<br>
+   Open a web browser and go to https://localhost:8443 to access the Short-Url-System using SSL.<br>
 
-Make sure to update the SSL configuration based on your specific certificate and keystore information.<br> It's recommended to use a valid SSL certificate issued by a trusted CA in a production environment.
+Make sure to update the SSL configuration based on your specific certificate and keystore information.<br> 
+It's recommended to use a valid SSL certificate issued by a trusted CA in a production environment.<br>
 
 Please note that the instructions provided assume a basic understanding of Git, Maven, and running Java applications. Make sure to provide any additional instructions or prerequisites specific to your application if needed.
 
@@ -97,3 +101,5 @@ Please note that the instructions provided assume a basic understanding of Git, 
 - [ ] Adding Users service
 - [ ] Adding Nginx for load balancer.
 - [ ] Adding Redis for improve read capabilities.
+
+## Contributor
