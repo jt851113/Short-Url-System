@@ -8,8 +8,6 @@
 *** 
 ## Background
 
-使用 SpringBoot 與 MySql 實現的簡易短網址系統<br>
-
 This is a simple implementation of a short URL system using Spring Boot and MySQL. <br>
 It provides a convenient way to shorten long URLs and includes a basic front-end presentation using HTML, CSS, and JavaScript.<br>
 
