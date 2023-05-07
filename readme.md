@@ -92,7 +92,7 @@ Please note that the instructions provided assume a basic understanding of Git, 
 
 ## Future Work
 - [ ] Adding a RandomNumber DataBase to avoid conflict of random numbers.
-- [ ] Input checking system.
+- [ ] Input checking system(check is web address or not).
 - [ ] Better front-end (Maybe ?)
 - [ ] Adding Users service
 - [ ] Adding Nginx for load balancer.
