@@ -77,7 +77,8 @@
         })
             .then(response => response.json())
             .then(data => {
-                var shortUrl = "http://localhost/" + data.url;
+                var domain = "http://localhost/";
+                var shortUrl = domain + data.url;
                 var a = document.createElement('a');
                 var linkText = document.createTextNode(shortUrl);
                 a.appendChild(linkText);
