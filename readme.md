@@ -10,7 +10,6 @@
 
 This is a simple implementation of a short URL system using Spring Boot and MySQL. <br>
 It provides a convenient way to shorten long URLs and includes a basic front-end presentation using HTML, CSS, and JavaScript.<br>
-
 Short Url System is a web application that allows you to create shortened URLs for long URLs. It helps to make your URLs more concise and easier to share.
 The Short URL System is designed to create shortened versions of long URLs, making them easier to share and manage. It utilizes the Spring Boot framework for the backend logic and MySQL as the database for storing URL mappings.<br>
 ### Whole System Design
