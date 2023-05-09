@@ -32,5 +32,10 @@ build/
 ### VS Code ###
 .vscode/
 
+<<<<<<< Updated upstream
 ### Spring Boot ###
 !**/src/main/resources/application.properties
+=======
+### Sprinb Boot ###
+application.properties
+>>>>>>> Stashed changes
