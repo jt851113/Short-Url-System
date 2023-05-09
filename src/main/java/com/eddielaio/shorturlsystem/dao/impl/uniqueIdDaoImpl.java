@@ -34,6 +34,9 @@ public class uniqueIdDaoImpl implements uniqueIdDao {
             int key = keyHolder.getKey().intValue();
             //String s = transformUtil.base62(key);
             String s = transformUtil.randomBase62();
+            while (checkDuplicatedCode(s)){
+                s = transformUtil.randomBase62();
+            }
             map.put("short_url", s);
             map.put("id", key);
             String sql2 = "UPDATE url_db set short_url=:short_url where id = :id";
@@ -72,4 +75,15 @@ public class uniqueIdDaoImpl implements uniqueIdDao {
             return stringList.get(0);
         }
     }
+
+    public boolean checkDuplicatedCode(String shortCode) {
+        String sql = "select COUNT(*) from url_db WHERE short_url = :shortCode";
+        HashMap<String, String> map = new HashMap<>();
+        map.put("shortCode", shortCode);
+        int count = namedParameterJdbcTemplate.queryForObject(sql, map, Integer.class);
+
+        return count > 0;
+    }
+
+
 }

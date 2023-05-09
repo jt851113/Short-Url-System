@@ -6,7 +6,7 @@
 ![image.png](https://raw.githubusercontent.com/jt851113/my-image-host/main/202305070012141.png)
 ***
 
-## <center>[Live Demo](<https://eddieshort.site/>)</center>
+## [Live Demo](https://eddieshort.site/)
 
 *** 
 ## Background
@@ -95,7 +95,7 @@ It's recommended to use a valid SSL certificate issued by a trusted CA in a prod
 Please note that the instructions provided assume a basic understanding of Git, Maven, and running Java applications. Make sure to provide any additional instructions or prerequisites specific to your application if needed.
 
 ## Future Work
-- [ ] Adding a RandomNumber DataBase to avoid conflict of random numbers.
+- [x] avoid conflict of random numbers.
 - [ ] Input checking system(check is web address or not).
 - [ ] Better front-end (Maybe ?)
 - [ ] Adding Users service
