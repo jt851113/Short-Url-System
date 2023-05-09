@@ -50,7 +50,7 @@ To install and run the ShortUrl System, follow these steps:
    ```
 8. Run the application:
    ```
-   java -jar target/short-url-system.jar
+   java -jar target/ShortUrlSystem-0.0.1-SNAPSHOT.war
    ```
 9. Access the application:
    Open a web browser and go to `http://localhost:8080` to access the ShortUrl System
