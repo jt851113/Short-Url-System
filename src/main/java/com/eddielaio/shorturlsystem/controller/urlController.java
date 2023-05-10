@@ -51,7 +51,7 @@ public class urlController {
     @GetMapping("/{shortUrl}")
     public ResponseEntity<String> redirectToOriginalUrl(@PathVariable String shortUrl) throws URISyntaxException {
         String decode = urlService.decode(shortUrl);
-        System.out.println(decode);
+        /*System.out.println(decode);*/
         if (decode == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {

@@ -30,22 +30,22 @@ public class uniqueIdDaoImpl implements uniqueIdDao {
             HashMap<String, Object> map = new HashMap<>();
             map.put("original_url", originalUrl);
             String sql = "Insert Into url_db(original_url) Values(:original_url)";
-            namedParameterJdbcTemplate.update(sql, new MapSqlParameterSource(map), keyHolder);
+            namedParameterJdbcTemplate.update(sql, new MapSqlParameterSource(map), keyHolder, new String[]{"id"});
             int key = keyHolder.getKey().intValue();
             //String s = transformUtil.base62(key);
-            String s = transformUtil.randomBase62();
-            while (checkDuplicatedCode(s)){
+            String s;
+            do {
                 s = transformUtil.randomBase62();
-            }
+            } while (checkDuplicatedCode(s));
             map.put("short_url", s);
             map.put("id", key);
             String sql2 = "UPDATE url_db set short_url=:short_url where id = :id";
             int update = namedParameterJdbcTemplate.update(sql2, new MapSqlParameterSource(map));
-            if (update >= 1) {
+            /*if (update >= 1) {
                 System.out.println("update successful"+"key: "+key+" code: "+s);
             }else{
                 System.out.println("fail");
-            }
+            }*/
             return s;
         }
     }
@@ -81,9 +81,10 @@ public class uniqueIdDaoImpl implements uniqueIdDao {
         HashMap<String, String> map = new HashMap<>();
         map.put("shortCode", shortCode);
         int count = namedParameterJdbcTemplate.queryForObject(sql, map, Integer.class);
-
         return count > 0;
     }
+
+
 
 
 }
