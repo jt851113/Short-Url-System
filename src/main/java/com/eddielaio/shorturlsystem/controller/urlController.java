@@ -38,6 +38,7 @@ public class urlController {
                     value = "{\"url\":\"https://www.google.com\"}"
             )})
     ) @NotNull url OriginalUrl) {
+        logger.info("info");
         if(!myRateLimiter.rateLimiter.tryAcquire()){
             return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).body("Too many requests, please try again later.");
         }
@@ -51,6 +52,7 @@ public class urlController {
     @GetMapping("/{shortUrl}")
     public ResponseEntity<String> redirectToOriginalUrl(@PathVariable String shortUrl) throws URISyntaxException {
         String decode = urlService.decode(shortUrl);
+        logger.info("get info");
         /*System.out.println(decode);*/
         if (decode == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
