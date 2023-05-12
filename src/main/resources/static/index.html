@@ -77,7 +77,7 @@
         })
             .then(response => response.json())
             .then(data => {
-                var domain = "http://eddieshort.site/";
+                var domain = "https://eddieshort.site/";
                 var shortUrl = domain + data.url;
                 var a = document.createElement('a');
                 var linkText = document.createTextNode(shortUrl);
